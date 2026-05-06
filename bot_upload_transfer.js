@@ -64,11 +64,11 @@ bot.on("message", async (msg) => {
     });
     await bot.sendMessage(
       chatId,
-      `✅ [TEST] DONE input ya:\nNama: ${nama}\nKode: ${kode}\nNominal: ${nominal}`
+      `✅ DONE input ya:\nNama: ${nama}\nKode: ${kode}\nNominal: ${nominal}`
     );
   } catch (err) {
     console.error("❌ Gagal menyimpan:", err.message);
-    await bot.sendMessage(chatId, "❌ [TEST] Gagal menyimpan ke Google Sheets.");
+    await bot.sendMessage(chatId, "❌ Gagal menyimpan ke Google Sheets.");
   }
 });
 
@@ -84,7 +84,7 @@ bot.on("polling_error", (err) => {
     await bot.deleteWebHook({ drop_pending_updates: true });
     // Start long polling
     await bot.startPolling();
-    console.log("✅ [TEST] Bot UPLOAD TRANSFER aktif (polling mode)");
+    console.log("✅ Bot UPLOAD TRANSFER aktif (polling mode)");
   } catch (err) {
     console.error("❌ Gagal start bot:", err.message);
     process.exit(1);
